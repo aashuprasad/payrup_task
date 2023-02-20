@@ -25,13 +25,13 @@ class OverviewViewModel : ViewModel() {
     }
 
     private fun getMarsRealEstateProperties() {
-        ContactsAPI.retrofitService.getContacts().enqueue( object: Callback<String> {
-            override fun onFailure(call: Call<String>, t: Throwable) {
+        ContactsAPI.retrofitService.getContacts().enqueue( object: Callback<List<Contacts>> {
+            override fun onFailure(call: Call<List<Contacts>>, t: Throwable) {
                 _response.value = "Failure: " + t.message
             }
 
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-                _response.value = response.body()
+            override fun onResponse(call: Call<List<Contacts>>, response: Response<List<Contacts>>) {
+                _response.value = "Success: ${response.body()?.size} Contacts properties retrieved"
             }
         })
     }

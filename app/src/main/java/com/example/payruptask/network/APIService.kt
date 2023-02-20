@@ -16,14 +16,14 @@ private val moshi = Moshi.Builder()
     .build()
 
 private val retrofit = Retrofit.Builder()
-    .addConverterFactory(ScalarsConverterFactory.create())
+    .addConverterFactory(MoshiConverterFactory.create(moshi))
     .baseUrl(BASE_URL)
     .build()
 
 interface ApiService {
 
     @GET("users")
-    fun getContacts(): Call<String>
+    fun getContacts(): Call<List<Contacts>>
 }
 
 object ContactsAPI {
