@@ -6,6 +6,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.payruptask.R
+import com.example.payruptask.databinding.ContactListViewItemBinding
 import com.example.payruptask.databinding.FragmentOverviewBinding
 
 
