@@ -23,7 +23,7 @@ private val retrofit = Retrofit.Builder()
 interface ApiService {
 
     @GET("users")
-    fun getContacts(): Call<List<Contacts>>
+    suspend fun getContacts(): List<Contacts>
 }
 
 object ContactsAPI {
