@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.payruptask.detail.DetailViewModel" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,37 +20,126 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <ImageView
-                android:id="@+id/main_photo_image"
+            <TextView
+                android:id="@+id/usernameTV"
                 android:layout_width="0dp"
-                android:layout_height="266dp"
-                android:scaleType="centerCrop"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:text="@{viewModel.selectedContact.component5()}"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@tools:sample/backgrounds/scenic" />
+                tools:text="BRET" />
 
             <TextView
-                android:id="@+id/property_type_text"
+                android:id="@+id/username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:textColor="#de000000"
-                android:textSize="39sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/main_photo_image"
-                tools:text="To Rent" />
-
-            <TextView
-                android:id="@+id/price_value_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textColor="#de000000"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/property_type_text"
-                tools:text="$100,000" />
+                app:layout_constraintStart_toStartOf="@+id/usernameTV"
+                app:layout_constraintTop_toBottomOf="@+id/usernameTV"
+                tools:text="USERNAME" />
+
+            <TextView
+                android:id="@+id/phoneTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:text="@{viewModel.selectedContact.component6()}"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/username"
+                app:layout_constraintTop_toBottomOf="@+id/username"
+                tools:text="1-7234234-324234-23" />
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/phoneTV"
+                app:layout_constraintTop_toBottomOf="@+id/phoneTV"
+                tools:text="PHONE" />
+
+            <TextView
+                android:id="@+id/addressTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                app:addressData="@{viewModel.selectedContact}"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/username"
+                app:layout_constraintTop_toBottomOf="@+id/phone"
+                tools:text="Apt. 556, Kulas Light,\nGewnborough, 324324" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/phoneTV"
+                app:layout_constraintTop_toBottomOf="@+id/addressTV"
+                tools:text="ADDRESS" />
+
+            <TextView
+                android:id="@+id/websiteTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:text="@{viewModel.selectedContact.component8()}"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/username"
+                app:layout_constraintTop_toBottomOf="@+id/address"
+                tools:text="hildegard.org" />
+
+            <TextView
+                android:id="@+id/website"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/phoneTV"
+                app:layout_constraintTop_toBottomOf="@+id/websiteTV"
+                tools:text="WEBSITE" />
+
+            <TextView
+                android:id="@+id/companyTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                app:companyData="@{viewModel.selectedContact}"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/username"
+                app:layout_constraintTop_toBottomOf="@+id/website"
+                tools:text="Romaguera-Crona\nMulti-layered client-server neural-net\nharness real-time e-markets" />
+
+            <TextView
+                android:id="@+id/company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/phoneTV"
+                app:layout_constraintTop_toBottomOf="@+id/companyTV"
+                tools:text="COMPANY" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

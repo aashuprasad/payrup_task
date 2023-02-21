@@ -6,31 +6,37 @@
     <data>
         <variable
             name="contact"
-            type="com.example.payruptask.overview.OverviewViewModel" />
+            type="com.example.payruptask.network.models.Contacts" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{contact.component5()}"
             android:textSize="24sp"
-            tools:text="FIRST_NAME LAST_NAME"
-            android:text="@{contact.contacts.component5()}"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="FIRST_NAME LAST_NAME" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/mail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="email"
-            android:text="@{contact.contacts.component3()}"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@{contact.component3()}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            tools:text="email"
+            android:layout_marginBottom="20dp"/>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dp"
+            android:visibility="visible"
+            android:background="@android:color/darker_gray"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

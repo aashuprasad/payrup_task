@@ -8,16 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.payruptask.databinding.ContactListViewItemBinding
 import com.example.payruptask.network.models.Contacts
 
-enum class ApiStatus{LOADING, ERROR, DONE}
-
-class ContactListAdapter : ListAdapter<Contacts, ContactListAdapter.ContactsViewHolder>(DiffCallback) {
+class ContactListAdapter(val onClickListener: OnClickListener) :
+    ListAdapter<Contacts, ContactListAdapter.ContactsViewHolder>(DiffCallback) {
 
     class ContactsViewHolder(private var binding: ContactListViewItemBinding):
         RecyclerView.ViewHolder(binding.root) {
         fun bind(contacts: Contacts) {
             binding.contact =contacts
-            // This is important, because it forces the data binding to execute immediately,
-            // which allows the RecyclerView to make the correct view size measurements
             binding.executePendingBindings()
         }
     }
@@ -39,6 +36,13 @@ class ContactListAdapter : ListAdapter<Contacts, ContactListAdapter.ContactsView
 
     override fun onBindViewHolder(holder: ContactsViewHolder, position: Int) {
         val contacts = getItem(position)
+        holder.itemView.setOnClickListener {
+            onClickListener.onClick(contacts)
+        }
         holder.bind(contacts)
+    }
+
+    class OnClickListener(val clickListener: (contacts: Contacts) -> Unit) {
+        fun onClick(contacts: Contacts) = clickListener(contacts)
     }
 }

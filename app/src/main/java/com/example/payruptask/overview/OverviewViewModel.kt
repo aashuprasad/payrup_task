@@ -13,34 +13,48 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+enum class ContactsAPIStatus { LOADING, ERROR, DONE }
 
 class OverviewViewModel : ViewModel() {
 
-    private val _status = MutableLiveData<String>()
+    private val _status = MutableLiveData<ContactsAPIStatus>()
 
-    val status: LiveData<String>
+    val status: LiveData<ContactsAPIStatus>
         get() = _status
 
     private val _contacts = MutableLiveData<List<Contacts>>()
 
     val contacts: LiveData<List<Contacts>>
         get() = _contacts
+
+    private val _navigateToSelectedContact = MutableLiveData<Contacts?>()
+
+    val navigateToSelectedContact: MutableLiveData<Contacts?>
+        get() = _navigateToSelectedContact
+
     init {
         getContactsProperties()
 
     }
 
     private fun getContactsProperties() {
+        _status.value = ContactsAPIStatus.LOADING
         viewModelScope.launch {
             try {
-                var listResult = ContactsAPI.retrofitService.getContacts()
-                _status.value = "Success: ${listResult.size}"
-                if (listResult.size > 0) {
-                    _contacts.value = listResult
-                }
+                _contacts.value = ContactsAPI.retrofitService.getContacts()
+                _status.value = ContactsAPIStatus.DONE
             } catch (e: Exception) {
-                _status.value = "Failure: ${e.message}"
+                _status.value = ContactsAPIStatus.ERROR
+                _contacts.value = ArrayList()
             }
         }
+    }
+
+    fun displayContactDetails(contact: Contacts) {
+        _navigateToSelectedContact.value = contact
+    }
+
+    fun displayContactDetailsComplete() {
+        _navigateToSelectedContact.value = null
     }
 }
