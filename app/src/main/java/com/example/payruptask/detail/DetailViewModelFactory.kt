@@ -1,15 +1,9 @@
 package com.example.payruptask.detail
 
-/*
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.payruptask.network.models.Contacts
-
-*/
-/**
- * Simple ViewModel factory that provides the MarsProperty and context to the ViewModel.
- *//*
 
 class DetailViewModelFactory(
         private val contacts: Contacts,
@@ -21,4 +15,4 @@ class DetailViewModelFactory(
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
-}*/
+}

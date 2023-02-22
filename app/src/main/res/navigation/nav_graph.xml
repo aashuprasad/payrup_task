@@ -9,11 +9,16 @@
         android:name="com.example.payruptask.overview.OverviewFragment"
         android:label="OverviewFragment" >
         <action
-            android:id="@+id/action_overviewFragment_to_detailFragment"
+            android:id="@+id/action_showDetail"
             app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.payruptask.detail.DetailFragment"
-        android:label="DetailFragment" />
+        android:label="DetailFragment" >
+        <argument
+            android:name="selectedContact"
+            app:argType="com.example.payruptask.network.models.Contacts"
+            />
+    </fragment>
 </navigation>
