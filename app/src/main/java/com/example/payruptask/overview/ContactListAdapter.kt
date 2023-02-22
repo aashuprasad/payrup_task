@@ -11,12 +11,24 @@ import com.example.payruptask.network.models.Contacts
 class ContactListAdapter(val onClickListener: OnClickListener) :
     ListAdapter<Contacts, ContactListAdapter.ContactsViewHolder>(DiffCallback) {
 
-    class ContactsViewHolder(private var binding: ContactListViewItemBinding):
+    class ContactsViewHolder(private var binding: ContactListViewItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(contacts: Contacts) {
-            binding.contact =contacts
+            binding.contact = contacts
             binding.executePendingBindings()
         }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactsViewHolder {
+        return ContactsViewHolder(ContactListViewItemBinding.inflate(LayoutInflater.from(parent.context)))
+    }
+
+    override fun onBindViewHolder(holder: ContactsViewHolder, position: Int) {
+        val contacts = getItem(position)
+        holder.itemView.setOnClickListener {
+            onClickListener.onClick(contacts)
+        }
+        holder.bind(contacts)
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<Contacts>() {
@@ -27,19 +39,6 @@ class ContactListAdapter(val onClickListener: OnClickListener) :
         override fun areContentsTheSame(oldItem: Contacts, newItem: Contacts): Boolean {
             return oldItem.id == newItem.id
         }
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup,
-                                    viewType: Int): ContactsViewHolder {
-        return ContactsViewHolder(ContactListViewItemBinding.inflate(LayoutInflater.from(parent.context)))
-    }
-
-    override fun onBindViewHolder(holder: ContactsViewHolder, position: Int) {
-        val contacts = getItem(position)
-        holder.itemView.setOnClickListener {
-            onClickListener.onClick(contacts)
-        }
-        holder.bind(contacts)
     }
 
     class OnClickListener(val clickListener: (contacts: Contacts) -> Unit) {

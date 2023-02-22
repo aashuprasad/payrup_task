@@ -8,35 +8,40 @@
             name="contact"
             type="com.example.payruptask.network.models.Contacts" />
     </data>
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp">
+        android:layout_margin="2dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:cardMaxElevation="2dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{contact.component5()}"
             android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/black"
             tools:text="FIRST_NAME LAST_NAME" />
 
         <TextView
             android:id="@+id/mail"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:text="@{contact.component3()}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name"
             tools:text="email"
-            android:layout_marginBottom="20dp"/>
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.2dp"
-            android:visibility="visible"
-            android:background="@android:color/darker_gray"
-            tools:ignore="MissingConstraints" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginBottom="20dp"
+            android:layout_below="@id/name"
+            />
+
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

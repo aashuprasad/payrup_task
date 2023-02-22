@@ -1,36 +1,27 @@
 package com.example.payruptask.overview
 
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.payruptask.network.ContactsAPI
-import com.example.payruptask.network.ContactsAPI.retrofitService
 import com.example.payruptask.network.models.Contacts
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 enum class ContactsAPIStatus { LOADING, ERROR, DONE }
 
 class OverviewViewModel : ViewModel() {
 
     private val _status = MutableLiveData<ContactsAPIStatus>()
-
-    val status: LiveData<ContactsAPIStatus>
-        get() = _status
+    val status: LiveData<ContactsAPIStatus> get() = _status
 
     private val _contacts = MutableLiveData<List<Contacts>>()
-
-    val contacts: LiveData<List<Contacts>>
-        get() = _contacts
+    val contacts: LiveData<List<Contacts>> get() = _contacts
 
     private val _navigateToSelectedContact = MutableLiveData<Contacts?>()
-
-    val navigateToSelectedContact: MutableLiveData<Contacts?>
-        get() = _navigateToSelectedContact
+    val navigateToSelectedContact: LiveData<Contacts?> get() = _navigateToSelectedContact
 
     init {
         getContactsProperties()

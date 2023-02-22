@@ -13,4 +13,4 @@ data class Contacts(
     val phone: String,
     val username: String,
     val website: String
-):Parcelable
+) : Parcelable

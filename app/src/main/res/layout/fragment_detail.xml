@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.example.payruptask.detail.DetailViewModel" />
+
     </data>
 
     <ScrollView
@@ -43,7 +43,7 @@
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/usernameTV"
                 app:layout_constraintTop_toBottomOf="@+id/usernameTV"
-                tools:text="USERNAME" />
+                android:text="USERNAME" />
 
             <TextView
                 android:id="@+id/phoneTV"
@@ -67,7 +67,7 @@
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/phoneTV"
                 app:layout_constraintTop_toBottomOf="@+id/phoneTV"
-                tools:text="PHONE" />
+                android:text="PHONE" />
 
             <TextView
                 android:id="@+id/addressTV"
@@ -91,7 +91,7 @@
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/phoneTV"
                 app:layout_constraintTop_toBottomOf="@+id/addressTV"
-                tools:text="ADDRESS" />
+                android:text="ADDRESS" />
 
             <TextView
                 android:id="@+id/websiteTV"
@@ -115,7 +115,7 @@
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/phoneTV"
                 app:layout_constraintTop_toBottomOf="@+id/websiteTV"
-                tools:text="WEBSITE" />
+                android:text="WEBSITE" />
 
             <TextView
                 android:id="@+id/companyTV"
@@ -139,7 +139,7 @@
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/phoneTV"
                 app:layout_constraintTop_toBottomOf="@+id/companyTV"
-                tools:text="COMPANY" />
+                android:text="COMPANY" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
