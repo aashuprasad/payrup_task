@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/overviewFragment">
+
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="com.example.payruptask.overview.OverviewFragment"
+        android:label="OverviewFragment" >
+        <action
+            android:id="@+id/actionShowDetail"
+            app:destination="@id/detailFragment"
+            app:popUpTo="@id/overviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.payruptask.detail.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="selectedContact"
+            app:argType="com.example.payruptask.network.models.Contacts" />
+    </fragment>
+</navigation>

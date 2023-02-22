@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-mergeDebugResources-49:/layout-land/fragment_overview.xml",
+        "source": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-main-52:/layout-land/fragment_overview.xml"
+    },
+    {
+        "merged": "com.example.payruptask.app-mergeDebugResources-49:/layout-land/fragment_overview.xml",
+        "source": "com.example.payruptask.app-main-52:/layout-land/fragment_overview.xml"
+    }
+]

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+                                                       
+                                                   
+    
+                 
+                          
+                                                                    
+           
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:cardMaxElevation="2dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true" android:tag="layout/contact_list_view_item_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="binding_1"               
+            android:textSize="24sp"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/black"
+            tools:text="FIRST_NAME LAST_NAME" />
+
+        <TextView
+            android:id="@+id/mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:tag="binding_2"               
+            tools:text="email"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@id/name"
+            />
+
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+         
