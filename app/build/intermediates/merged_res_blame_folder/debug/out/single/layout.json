@@ -16,7 +16,7 @@
         "source": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-main-52:/layout/fragment_detail.xml"
     },
     {
-        "merged": "com.example.payruptask.app-mergeDebugResources-49:/layout/contact_list_view_item.xml",
-        "source": "com.example.payruptask.app-main-52:/layout/contact_list_view_item.xml"
+        "merged": "com.example.payruptask.app-mergeDebugResources-49:/layout/fragment_overview.xml",
+        "source": "com.example.payruptask.app-main-52:/layout/fragment_overview.xml"
     }
 ]

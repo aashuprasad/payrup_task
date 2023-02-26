@@ -4,8 +4,8 @@
         "source": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-main-52:/drawable-v24/ic_connection_error.xml"
     },
     {
-        "merged": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-merged_res-50:/layout-land_fragment_overview.xml.flat",
-        "source": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-main-52:/layout-land/fragment_overview.xml"
+        "merged": "com.example.payruptask.app-merged_res-50:/layout_fragment_overview.xml.flat",
+        "source": "com.example.payruptask.app-main-52:/layout/fragment_overview.xml"
     },
     {
         "merged": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-merged_res-50:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -24,20 +24,20 @@
         "source": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-main-52:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-merged_res-50:/layout_activity_main.xml.flat",
-        "source": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-main-52:/layout/activity_main.xml"
-    },
-    {
         "merged": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-merged_res-50:/mipmap-hdpi_ic_launcher.webp.flat",
         "source": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-main-52:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-merged_res-50:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-main-52:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-merged_res-50:/layout_activity_main.xml.flat",
+        "source": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-main-52:/layout/activity_main.xml"
     },
     {
         "merged": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-merged_res-50:/layout_contact_list_view_item.xml.flat",
         "source": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-main-52:/layout/contact_list_view_item.xml"
+    },
+    {
+        "merged": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-merged_res-50:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-main-52:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
         "merged": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-merged_res-50:/xml_data_extraction_rules.xml.flat",
@@ -94,10 +94,6 @@
     {
         "merged": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-merged_res-50:/mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-main-52:/mipmap-xxxhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-merged_res-50:/layout-sw600dp_fragment_overview.xml.flat",
-        "source": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-main-52:/layout-sw600dp/fragment_overview.xml"
     },
     {
         "merged": "/home/user/.gradle/daemon/7.4/com.example.payruptask.app-merged_res-50:/mipmap-mdpi_ic_launcher.webp.flat",
